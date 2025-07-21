@@ -1,3 +1,5 @@
+import API_KEY from './config.js';
+
 document.addEventListener('DOMContentLoaded', function() {
     // Get references to the HTML elements
 
@@ -15,7 +17,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const errorMessage= document.getElementById("error-message");
 
-const API_KEY = "568b6339e24eaac5f6cf27ed16049eb9";
+
+
+
 
 getweatherBtn.addEventListener("click", async function() {
     const city = cityInput.value.trim();
@@ -45,7 +49,7 @@ async function fetchWeatherData(city) {
  
 function displayWeatherData(data) {
     const { name, main, weather } = data;
-    temperatureDisplay.textContent = `Temprature: ${main.temp} °C`;
+    temperatureDisplay.textContent = `Temperature: ${main.temp} °C`;
     descriptionDisplay.textContent = `Description: ${weather[0].description}`;
     cityNameDisplay.textContent = `City: ${name}`;
     weatherInfo.classList.remove("hidden");
